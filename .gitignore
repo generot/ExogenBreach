@@ -1,0 +1,12 @@
+*.csproj
+*.html
+*.htm
+*.sln
+Library
+Logs
+obj
+Packages
+ProjectSettings
+UserSettings
+.vs
+.vscode
