@@ -2,6 +2,6 @@
 Official "Exogen Breach" repository. Hopefully, we'll finish the game this time.
 
 ## Developers
-  -Martin Nakov(generot)
-  -Venelin Novakov(Venko15)
-  -Emil Doychinov(idkmandocta)
+  -Martin Nakov(generot)<br>
+  -Venelin Novakov(Venko15)<br>
+  -Emil Doychinov(idkmandocta)<br>
