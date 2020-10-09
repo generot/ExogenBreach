@@ -16,4 +16,4 @@ MonoBehaviour:
   delay: 3
   shootingDistance: 4
   health: 100
-  dmg: 0
+  dmg: 2

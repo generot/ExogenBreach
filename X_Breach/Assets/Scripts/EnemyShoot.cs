@@ -9,7 +9,7 @@ public class EnemyShoot : MonoBehaviour
 
     void Update()
     {
-        //StartCoroutine(WaitAndShoot());
+        StartCoroutine(WaitAndShoot());
     }
 
     void Shoot()
@@ -30,7 +30,7 @@ public class EnemyShoot : MonoBehaviour
 
     IEnumerator WaitAndShoot()
     {
-        yield return new WaitForSeconds(enm.delay);
         Shoot();
+        yield return new WaitForSeconds(enm.delay);
     }
 }
