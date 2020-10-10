@@ -20,7 +20,7 @@ public class MainMenu : MonoBehaviour
 
     public void ShowCredits()
     {
-        if(credits.activeSelf)
+        if (credits.activeSelf)
             credits.SetActive(false);
         else credits.SetActive(true);
     }

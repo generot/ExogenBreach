@@ -299,6 +299,7 @@ GameObject:
   - component: {fileID: 827058920}
   - component: {fileID: 827058919}
   - component: {fileID: 827058918}
+  - component: {fileID: 827058921}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -371,6 +372,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &827058921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827058917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 340195ea7dcc7fc43b5de3cdb040716f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  msg: {fileID: 1469160715}
 --- !u!1 &1469160713
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,7 +397,7 @@ GameObject:
   - component: {fileID: 1469160716}
   - component: {fileID: 1469160715}
   m_Layer: 0
-  m_Name: Text
+  m_Name: Message
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -405,8 +419,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -42}
-  m_SizeDelta: {x: 1007.1377, y: 322.6806}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1022.2001, y: 372.88885}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1469160715
 MonoBehaviour:
@@ -429,10 +443,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 100
+    m_Font: {fileID: 12800000, guid: 34cce0d35c6caf549a21efd088e60346, type: 3}
+    m_FontSize: 88
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 300
     m_Alignment: 1
@@ -441,7 +455,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You have successfully infected the body.
+  m_Text: Ye conqueror hath conquered thy corporis at ye rendezvous
 --- !u!222 &1469160716
 CanvasRenderer:
   m_ObjectHideFlags: 0
