@@ -42,10 +42,18 @@ public class Enemy : MonoBehaviour
             else
                 transform.localScale = new Vector2(scl.x, scl.y);
         }
+
+        DieIfDead();
     }
 
     public Vector2 WalkTo(Vector2 pos, Vector2 toWalkTo)
     {
         return Vector2.ClampMagnitude(toWalkTo - pos, 1f) * b_entity.distToCover;
+    }
+
+    void DieIfDead()
+    {
+        if (b_entity.IsDead())
+            Destroy(gameObject);
     }
 }

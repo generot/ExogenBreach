@@ -2,20 +2,44 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class rcast : MonoBehaviour
+public class rcast : BaseEntity
 {
-    public float units;
-    public int damage;
-    public Transform sPoint;
-    //public LayerMask Target;
-    private void Update()
+    float rayLen;
+    LayerMask mask;
+
+    public rcast(LayerMask _mask, int dmg, float len) 
+        : base(0.1f, 6f, 0.3f, 100, dmg)
     {
-        if (Input.GetMouseButtonDown(0))
+        rayLen = len;
+        mask = ~_mask;
+    }
+
+    public void Hit(Vector2 org, Vector2 scale)
+    {
+        Vector2 dir = Vector2.right * scale.normalized.x;
+        RaycastHit2D hitInfo = Physics2D.Raycast(org, dir, rayLen, mask);
+
+        if(hitInfo)
         {
-            StartCoroutine(shoot(sPoint, Vector2.right));
+            if(hitInfo.collider.CompareTag("Enemy"))
+            {
+                Enemy enm = hitInfo.collider.GetComponent<Enemy>();
+
+                Debug.Log("Enemy: " + enm.b_entity.health);
+                enm.b_entity.TakeDamage(damage);
+            } 
+            
+            if(hitInfo.collider.CompareTag("Player"))
+            {
+                pctrl pController = hitInfo.collider.GetComponent<pctrl>();
+
+                Debug.Log("Player: " + pController.b_entity.health);
+                pController.b_entity.TakeDamage(damage);
+            }
         }
     }
-    IEnumerator shoot(Transform transform, Vector2 Pos)
+
+    /*IEnumerator shoot(Transform transform, Vector2 Pos)
     { 
         RaycastHit2D enemyInf = Physics2D.Raycast(transform.position, Pos, units);
         if (enemyInf && enemyInf.collider.CompareTag("Enemy")) {
@@ -33,5 +57,5 @@ public class rcast : MonoBehaviour
                 }
             }
         }
-    }
+    }*/
 }

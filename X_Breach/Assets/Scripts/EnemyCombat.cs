@@ -1,32 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Net.Security;
 using UnityEngine;
 
 public class EnemyCombat : MonoBehaviour
 {
-    public pctrl pController;
-    public LayerMask Target;
-    public Transform EnemySPoint;
+    //public pctrl pController;
+    public LayerMask mask;
+    public BaseEnemy b_enemy;
 
-    public float range;
-    public int dmg;
-    void Update()
+    rcast rc;
+    //public Transform EnemySPoint;
+
+    void Start()
     {
-        StartCoroutine(eShoot());
+        rc = new rcast(mask, b_enemy.dmg, 1f);
     }
 
-    IEnumerator eShoot()
+    void Update()
     {
-        Collider2D[] target_array = Physics2D.OverlapCircleAll(EnemySPoint.position, range, Target);
-        foreach (Collider2D hit in target_array)
-        {
-            if (hit.gameObject)
-            {
-                hit.gameObject.GetComponent<pctrl>().b_entity.TakeDamage(dmg);
-                Debug.Log("Player has " + hit.gameObject.GetComponent<pctrl>().b_entity.health + " health");
-            }
+        eShoot();
+    }
 
-            yield return 10;
-        }
+    void eShoot()
+    {
+        //while(true)
+        //{
+            rc.Hit(transform.position, transform.localScale);
+            //yield return new WaitForSeconds(b_enemy.delay);
+        //}
     }
 }

@@ -1,0 +1,31 @@
+--COMBAT_BACKUP--
+//Collider2D[] entity_array = Physics2D.OverlapCircleAll(point.position, attackRange, hostile);
+        //foreach (Collider2D Enemy in entity_array)
+        //{
+        //    Debug.Log("we hit " + Enemy);
+        //
+        //    if(animator.GetBool("IsFighting"))
+        //        Enemy.gameObject.GetComponent<Enemy>().b_entity.TakeDamage(dmg);
+        //
+        //    Debug.Log(Enemy.gameObject.GetComponent<Enemy>().b_entity.health);
+        //
+        //    if (Enemy.gameObject.GetComponent<Enemy>().b_entity.health <= 0)
+        //    {
+        //        Destroy(Enemy.gameObject, 0);
+        //    }
+        //}
+--COMBAT_BACKUP--
+
+--ENEMY_COMBAT_BACKUP--
+Collider2D[] target_array = Physics2D.OverlapCircleAll(EnemySPoint.position, range, Target);
+        foreach (Collider2D hit in target_array)
+        {
+            if (hit.gameObject)
+            {
+                hit.gameObject.GetComponent<pctrl>().b_entity.TakeDamage(dmg);
+                Debug.Log("Player has " + hit.gameObject.GetComponent<pctrl>().b_entity.health + " health");
+            }
+
+            yield return 10;
+        }
+--ENEMY_COMBAT_BACKUP--

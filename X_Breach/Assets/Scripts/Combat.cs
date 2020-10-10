@@ -4,47 +4,31 @@ using UnityEngine;
 
 public class Combat : MonoBehaviour
 {
-    public float attackRange;
-    public LayerMask hostile;
-    public int dmg;
+    public LayerMask mask;
 
+    float attackRange = 1f;
+    int dmg = 8;
+
+    rcast rc;
     Animator animator;
-    Transform point;
 
     void Start()
     {
-        point = GetComponent<Transform>();
+        rc = new rcast(mask, dmg, attackRange);
+
         animator = GetComponent<Animator>();
     }
 
     void Update()
     {
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && !animator.GetBool("IsFighting"))
         {
             animator.SetBool("IsFighting", true);
-            Melee();
+            rc.Hit(transform.position, transform.localScale);
         }
 
         if(Input.GetMouseButtonUp(1))
             animator.SetBool("IsFighting", false);
-    }
-    void Melee()
-    {
-        Collider2D[] entity_array = Physics2D.OverlapCircleAll(point.position, attackRange, hostile);
-        foreach (Collider2D Enemy in entity_array)
-        {
-            Debug.Log("we hit " + Enemy);
-
-            if(animator.GetBool("IsFighting"))
-                Enemy.gameObject.GetComponent<Enemy>().b_entity.TakeDamage(dmg);
-
-            Debug.Log(Enemy.gameObject.GetComponent<Enemy>().b_entity.health);
-
-            if (Enemy.gameObject.GetComponent<Enemy>().b_entity.health <= 0)
-            {
-                Destroy(Enemy.gameObject, 0);
-            }
-        }
     }
 }

@@ -31,7 +31,7 @@ public class pctrl : MonoBehaviour
         //healthBar.value = (float)b_entity.health / b_entity.maxHealth;
         //health.text = ((int)((float)b_entity.health * b_entity.maxHealth / 100)).ToString() + "%";
 
-        Die();
+        DieIfDead();
     }
 
     void FixedUpdate()
@@ -87,7 +87,7 @@ public class pctrl : MonoBehaviour
             b_entity.isGrounded = false;
     }
 
-    void Die()
+    void DieIfDead()
     {
         if (b_entity.IsDead())
             Destroy(gameObject);

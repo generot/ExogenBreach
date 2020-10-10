@@ -57,5 +57,5 @@ public class BaseEntity
             health -= dmg;
     }
 
-    public bool IsDead() { return health == 0; }
+    public bool IsDead() { return health <= 0; }
 }

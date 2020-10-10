@@ -5,9 +5,20 @@ using UnityEngine;
 
 public class ScManagement : MonoBehaviour
 {
-    public void GameOver()
+    Collider2D trigger;
+    public Collider2D playerCol;
+
+    void Start()
     {
-        Scene gameOverScene = SceneManager.GetSceneByName("GameOver");
-        SceneManager.LoadScene(gameOverScene.buildIndex);
+        trigger = GetComponent<Collider2D>();
+    }
+
+    void Update()
+    {
+        if (trigger.IsTouching(playerCol) &&
+            SceneManager.GetActiveScene().name != "Level02")
+            SceneManager.LoadScene("Level02");
+        else if (trigger.IsTouching(playerCol))
+            SceneManager.LoadScene("GameOver");
     }
 }

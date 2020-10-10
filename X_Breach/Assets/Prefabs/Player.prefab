@@ -17,8 +17,7 @@ GameObject:
   - component: {fileID: 3218836363703490243}
   - component: {fileID: 3218836363703490242}
   - component: {fileID: 3218836363703490241}
-  - component: {fileID: 3218836363703490240}
-  m_Layer: 2
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -208,23 +207,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a16c4e8a7fe9c9408354f38797beb6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 1.5
-  hostile:
+  mask:
     serializedVersion: 2
-    m_Bits: 1024
-  dmg: 0
---- !u!114 &3218836363703490240
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3218836363703490247}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0d42f2b1179dca46b8d3e5b1fe11465, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  units: 7
-  damage: 0
-  sPoint: {fileID: 3218836363703490297}
+    m_Bits: 256
