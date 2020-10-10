@@ -2,6 +2,7 @@
 *.html
 *.htm
 *.sln
+*.aspx
 Library
 Logs
 obj
