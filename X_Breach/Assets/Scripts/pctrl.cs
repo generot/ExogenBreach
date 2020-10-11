@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 enum PlayerState
 {
@@ -12,6 +14,9 @@ enum PlayerState
 public class pctrl : MonoBehaviour
 {
     public BaseEntity b_entity;
+
+    public Text health;
+    public Slider healthBar;
 
     Rigidbody2D rb;
     Animator anim;
@@ -28,8 +33,8 @@ public class pctrl : MonoBehaviour
     }
     void Update()
     {
-        //healthBar.value = (float)b_entity.health / b_entity.maxHealth;
-        //health.text = ((int)((float)b_entity.health * b_entity.maxHealth / 100)).ToString() + "%";
+        healthBar.value = (float)b_entity.health / b_entity.maxHealth;
+        health.text = ((int)((float)b_entity.health * b_entity.maxHealth / 100)).ToString() + "%";
 
         DieIfDead();
     }
@@ -90,6 +95,9 @@ public class pctrl : MonoBehaviour
     void DieIfDead()
     {
         if (b_entity.IsDead())
-            Destroy(gameObject);
+        {
+            //Destroy(gameObject);
+            SceneManager.LoadScene("GameOverDeath");
+        }
     }
 }

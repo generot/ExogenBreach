@@ -186,5 +186,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mask:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 256
   b_enemy: {fileID: 11400000, guid: b5c5ef39a79e43944b408891a8621b25, type: 2}

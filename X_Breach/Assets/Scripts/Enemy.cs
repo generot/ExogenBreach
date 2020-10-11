@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour
             Vector2 distVec = player.position - transform.position;
             float distSq = distVec.x * distVec.x + distVec.y * distVec.y;
 
-            if (distSq > 16f)
+            if (distSq > 16f && b_entity.isGrounded)
             {
                 rb.velocity = WalkTo(transform.position, player.position);
                 anim.SetBool("IsRunning", true);
@@ -45,15 +45,23 @@ public class Enemy : MonoBehaviour
 
         DieIfDead();
     }
-
     public Vector2 WalkTo(Vector2 pos, Vector2 toWalkTo)
     {
         return Vector2.ClampMagnitude(toWalkTo - pos, 1f) * b_entity.distToCover;
     }
-
     void DieIfDead()
     {
         if (b_entity.IsDead())
             Destroy(gameObject);
+    }
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Ground")
+            b_entity.isGrounded = true;
+    }
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Ground")
+            b_entity.isGrounded = false;
     }
 }

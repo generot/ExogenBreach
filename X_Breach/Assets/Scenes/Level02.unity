@@ -37715,7 +37715,7 @@ PrefabInstance:
     - target: {fileID: 1845132392187102093, guid: 5596690270f32224c90c7ed9462f6752, type: 3}
       propertyPath: playerCol
       value: 
-      objectReference: {fileID: 1376543186}
+      objectReference: {fileID: 1267566871}
     - target: {fileID: 4957736774717578273, guid: 5596690270f32224c90c7ed9462f6752, type: 3}
       propertyPath: m_Offset.y
       value: 6.8220205
@@ -37803,6 +37803,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3361250624881807273, guid: 2fb5a7469e4494a43a201429df13d81e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6641214903833303923, guid: 2fb5a7469e4494a43a201429df13d81e, type: 3}
       propertyPath: player
       value: 
@@ -38289,6 +38293,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fb5a7469e4494a43a201429df13d81e, type: 3}
+--- !u!61 &1267566871 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 5601447479316298927, guid: af231346c20195c40b4b39c2401b789e, type: 3}
+  m_PrefabInstance: {fileID: 1376543185}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1322655337
 GameObject:
   m_ObjectHideFlags: 0
@@ -38487,14 +38496,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_Cam
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 9106041576092156052, guid: af231346c20195c40b4b39c2401b789e, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af231346c20195c40b4b39c2401b789e, type: 3}
---- !u!58 &1376543186 stripped
-CircleCollider2D:
-  m_CorrespondingSourceObject: {fileID: 9106041576092156075, guid: af231346c20195c40b4b39c2401b789e, type: 3}
-  m_PrefabInstance: {fileID: 1376543185}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1395903022
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,21 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class rcast : BaseEntity
+public class rcast
 {
+    int damage;
     float rayLen;
+
     LayerMask mask;
 
     public rcast(LayerMask _mask, int dmg, float len) 
-        : base(0.1f, 6f, 0.3f, 100, dmg)
     {
         rayLen = len;
-        mask = ~_mask;
+        mask = _mask;
+        damage = dmg;
     }
 
-    public void Hit(Vector2 org, Vector2 scale)
+    public void Hit(Vector2 org, Vector2 scale, Vector2 mult)
     {
-        Vector2 dir = Vector2.right * scale.normalized.x;
+        Vector2 dir = mult * scale.normalized.x;
         RaycastHit2D hitInfo = Physics2D.Raycast(org, dir, rayLen, mask);
 
         if(hitInfo)
@@ -28,13 +30,12 @@ public class rcast : BaseEntity
                 Debug.Log("Enemy: " + enm.b_entity.health);
                 enm.b_entity.TakeDamage(damage);
             } 
-            
-            if(hitInfo.collider.CompareTag("Player"))
+            else if(hitInfo.collider.CompareTag("Player"))
             {
-                pctrl pController = hitInfo.collider.GetComponent<pctrl>();
+                pctrl enm = hitInfo.collider.GetComponent<pctrl>();
 
-                Debug.Log("Player: " + pController.b_entity.health);
-                pController.b_entity.TakeDamage(damage);
+                Debug.Log("Player: " + enm.b_entity.health);
+                enm.b_entity.TakeDamage(damage);
             }
         }
     }

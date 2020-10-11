@@ -1,33 +1,34 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
-using System.Net.Security;
 using UnityEngine;
 
 public class EnemyCombat : MonoBehaviour
 {
-    //public pctrl pController;
     public LayerMask mask;
     public BaseEnemy b_enemy;
 
-    rcast rc;
-    //public Transform EnemySPoint;
+    bool attackFinished = true;
 
+    rcast rc;
     void Start()
     {
-        rc = new rcast(mask, b_enemy.dmg, 1f);
+        rc = new rcast(mask, b_enemy.dmg, b_enemy.shootingDistance);
     }
 
     void Update()
     {
-        eShoot();
+        if(attackFinished)
+        {
+            attackFinished = false;
+            StartCoroutine(Attack(b_enemy.delay));
+        }
     }
 
-    void eShoot()
+    IEnumerator Attack(float delay)
     {
-        //while(true)
-        //{
-            rc.Hit(transform.position, transform.localScale);
-            //yield return new WaitForSeconds(b_enemy.delay);
-        //}
+        yield return new WaitForSeconds(delay);
+        rc.Hit(transform.position, transform.localScale, Vector2.left);
+
+        attackFinished = true;
     }
+
 }

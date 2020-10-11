@@ -25,7 +25,7 @@ public class Combat : MonoBehaviour
         if (Input.GetMouseButtonDown(1) && !animator.GetBool("IsFighting"))
         {
             animator.SetBool("IsFighting", true);
-            rc.Hit(transform.position, transform.localScale);
+            rc.Hit(transform.position, transform.localScale, Vector2.right);
         }
 
         if(Input.GetMouseButtonUp(1))
