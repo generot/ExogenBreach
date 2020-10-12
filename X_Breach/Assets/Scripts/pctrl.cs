@@ -83,12 +83,12 @@ public class pctrl : MonoBehaviour
 
     void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.collider.tag == "Ground")
+        if (collision.collider.tag == "Ground" || collision.collider.tag == "Moveable")
             b_entity.isGrounded = true;
     }
     void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.collider.tag == "Ground")
+        if (collision.collider.tag == "Ground" || collision.collider.tag == "Moveable")
             b_entity.isGrounded = false;
     }
 

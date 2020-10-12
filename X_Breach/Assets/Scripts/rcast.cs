@@ -16,7 +16,7 @@ public class rcast
         damage = dmg;
     }
 
-    public void Hit(Vector2 org, Vector2 scale, Vector2 mult)
+    public Vector2 Hit(Vector2 org, Vector2 scale, Vector2 mult)
     {
         Vector2 dir = mult * scale.normalized.x;
         RaycastHit2D hitInfo = Physics2D.Raycast(org, dir, rayLen, mask);
@@ -37,7 +37,10 @@ public class rcast
                 Debug.Log("Player: " + enm.b_entity.health);
                 enm.b_entity.TakeDamage(damage);
             }
+            return (Vector2)hitInfo.transform.position - org;
         }
+
+        return Vector2.zero;
     }
 
     /*IEnumerator shoot(Transform transform, Vector2 Pos)
