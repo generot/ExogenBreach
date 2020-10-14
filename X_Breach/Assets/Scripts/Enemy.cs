@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour
             Vector2 distVec = player.position - transform.position;
             float distSq = distVec.x * distVec.x + distVec.y * distVec.y;
 
-            if (distSq > 16f && b_entity.isGrounded)
+            if (distSq > 16f && distSq < 512f && b_entity.isGrounded)
             {
                 rb.velocity = WalkTo(transform.position, player.position);
                 anim.SetBool("IsRunning", true);

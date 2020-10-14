@@ -34,7 +34,18 @@ public class EndScreen : MonoBehaviour
         msg.CrossFadeAlpha(0f, duration-2.5f, true);
 
         yield return new WaitForSeconds(duration + 2f);
-        SceneManager.LoadScene("MainMenu");
+
+        string sceneName = SceneManager.GetActiveScene().name;
+        switch(sceneName)
+        {
+            case "GameOver":
+            case "GameOverDeath":
+                SceneManager.LoadScene("MainMenu");
+                break;
+            case "Level01": Destroy(gameObject);
+                break;
+        }
+        
     }
 
     IEnumerator Appear(float step, float duration, bool comparison)

@@ -20,5 +20,8 @@ public class ScManagement : MonoBehaviour
             SceneManager.LoadScene("Level02");
         else if (trigger.IsTouching(playerCol))
             SceneManager.LoadScene("GameOver");
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+            SceneManager.LoadScene("MainMenu");
     }
 }

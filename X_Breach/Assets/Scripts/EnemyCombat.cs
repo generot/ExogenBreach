@@ -34,7 +34,7 @@ public class EnemyCombat : MonoBehaviour
 
         if(dir != Vector2.zero)
         {
-            GameObject newBullet = Instantiate(bullet, transform.position, transform.rotation, transform);
+            GameObject newBullet = Instantiate(bullet, transform.position, transform.rotation);
             newBullet.GetComponent<Rigidbody2D>().velocity = dir * bulletSpeed;
         }
 

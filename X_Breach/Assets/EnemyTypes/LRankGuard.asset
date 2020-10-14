@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LRankGuard
   m_EditorClassIdentifier: 
   speed: 2
-  delay: 2
-  shootingDistance: 7.5
+  delay: 1.5
+  shootingDistance: 9
   health: 100
   dmg: 6
