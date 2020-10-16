@@ -37816,12 +37816,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -3361250624881807273, guid: 2fb5a7469e4494a43a201429df13d81e, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -3361250624881807273, guid: 2fb5a7469e4494a43a201429df13d81e, type: 3}
       propertyPath: bullet
       value: 
-      objectReference: {fileID: 2567933625586326336, guid: 5c114b4ecf8d815438af6fa9ac2ace59, type: 3}
+      objectReference: {fileID: 4469669534882619088, guid: 7765578d06b371c46a34a396cfc17f27, type: 3}
     - target: {fileID: 6641214903833303923, guid: 2fb5a7469e4494a43a201429df13d81e, type: 3}
       propertyPath: player
       value: 
@@ -37943,7 +37943,7 @@ PrefabInstance:
     - target: {fileID: -3361250624881807273, guid: 2fb5a7469e4494a43a201429df13d81e, type: 3}
       propertyPath: bullet
       value: 
-      objectReference: {fileID: 2567933625586326336, guid: 5c114b4ecf8d815438af6fa9ac2ace59, type: 3}
+      objectReference: {fileID: 4469669534882619088, guid: 7765578d06b371c46a34a396cfc17f27, type: 3}
     - target: {fileID: 6641214903833303923, guid: 2fb5a7469e4494a43a201429df13d81e, type: 3}
       propertyPath: player
       value: 
@@ -38134,6 +38134,29 @@ BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 3218836363703490300, guid: 7d1b1ca7b8e1d6a408f13991dedc5c23, type: 3}
   m_PrefabInstance: {fileID: 798953716}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &798953719 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3218836363703490247, guid: 7d1b1ca7b8e1d6a408f13991dedc5c23, type: 3}
+  m_PrefabInstance: {fileID: 798953716}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &798953720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 798953719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e728cced8655c44f966c7e25908c13f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mask:
+    serializedVersion: 2
+    m_Bits: 1024
+  bullet: {fileID: 4469669534882619088, guid: 7765578d06b371c46a34a396cfc17f27, type: 3}
+  bulletSpeed: 60
+  cooldown: 1
 --- !u!1 &892891472
 GameObject:
   m_ObjectHideFlags: 0
@@ -38340,7 +38363,7 @@ PrefabInstance:
     - target: {fileID: -3361250624881807273, guid: 2fb5a7469e4494a43a201429df13d81e, type: 3}
       propertyPath: bullet
       value: 
-      objectReference: {fileID: 2567933625586326336, guid: 5c114b4ecf8d815438af6fa9ac2ace59, type: 3}
+      objectReference: {fileID: 4469669534882619088, guid: 7765578d06b371c46a34a396cfc17f27, type: 3}
     - target: {fileID: 6641214903833303923, guid: 2fb5a7469e4494a43a201429df13d81e, type: 3}
       propertyPath: player
       value: 
@@ -38832,7 +38855,7 @@ PrefabInstance:
     - target: {fileID: -3361250624881807273, guid: 2fb5a7469e4494a43a201429df13d81e, type: 3}
       propertyPath: bullet
       value: 
-      objectReference: {fileID: 2567933625586326336, guid: 5c114b4ecf8d815438af6fa9ac2ace59, type: 3}
+      objectReference: {fileID: 4469669534882619088, guid: 7765578d06b371c46a34a396cfc17f27, type: 3}
     - target: {fileID: 6641214903833303923, guid: 2fb5a7469e4494a43a201429df13d81e, type: 3}
       propertyPath: player
       value: 

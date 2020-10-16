@@ -144,8 +144,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   bullet: {fileID: 4469669534882619088, guid: 7765578d06b371c46a34a396cfc17f27, type: 3}
-  bulletSpeed: 30
-  cooldown: 3
+  bulletSpeed: 60
+  cooldown: 1
 --- !u!1001 &149090037
 PrefabInstance:
   m_ObjectHideFlags: 0
