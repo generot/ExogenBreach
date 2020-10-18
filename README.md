@@ -1,6 +1,6 @@
 # ExogenBreach
 Official "Exogen Breach" repository. Hopefully, we'll finish the game this time.
-![Alt text](ExogenBreach/X_Breach/Assets/images/Ver3.png?raw=true "Exogen Breach")
+![Alt text](X_Breach/Assets/images/Ver3.png?raw=true "Exogen Breach")
 
 ## Developers
   -Martin Nakov(generot)<br>
